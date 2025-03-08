@@ -8,17 +8,25 @@ import CourseDetails from '../DesktopView/components/CourseDetails'
 import CommentsSection from '../DesktopView/components/CommentsSection'
 import  '../../styles/Home.module.css'
 export default function Nave() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
-  // تحديث حالة العرض عند تغيير حجم الشاشة
   useEffect(() => {
-    const handleResize = () => {
+    // Ensure this code only runs in the browser
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener('resize', handleResize);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    return () => window.removeEventListener('resize', handleResize);
+      // Add resize event listener
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   return (

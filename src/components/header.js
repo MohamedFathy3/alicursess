@@ -3,18 +3,25 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Nave() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
-  // تحديث حالة العرض عند تغيير حجم الشاشة
   useEffect(() => {
-    const handleResize = () => {
+    // Ensure this code only runs in the browser
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener('resize', handleResize);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    // تنظيف الحدث بعد الخروج من المكون
-    return () => window.removeEventListener('resize', handleResize);
+      // Add resize event listener
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   return (
