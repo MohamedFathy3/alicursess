@@ -1,0 +1,14 @@
+.hover-effect:hover {
+    background-color: #f8f9fa; /* خلفية فاتحة عند التمرير */
+    transform: scale(1.1);  /* تكبير الأيقونة عند التمرير */
+    transition: all 0.3s ease-in-out;  /* إضافة تأثير انتقال سلس */
+  }
+  
+  .hover-effect i {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hover-effect:hover i {
+    transform: scale(1.2);  /* تكبير الأيقونة نفسها */
+  }
+  

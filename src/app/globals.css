@@ -1,0 +1,12 @@
+nav {
+  background: rgba(245, 249, 250, 1);
+  padding: 30px;
+}
+
+nav h2 {
+  font-size: 31px;
+}
+.icon-box:hover {
+  transform: scale(1.1);  /* تكبير الأيقونة عند التمرير */
+  transition: transform 0.3s ease-in-out;  /* إضافة تأثير سلس */
+}
