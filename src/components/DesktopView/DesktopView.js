@@ -6,6 +6,9 @@ import Videos from '../DesktopView/components/videos'
 import IconComponent from '../DesktopView/components/swiper'
 import CourseDetails from '../DesktopView/components/CourseDetails'
 import CommentsSection from '../DesktopView/components/CommentsSection'
+import Range from '../DesktopView/components/reang'
+import Section from '../DesktopView/components/sectionweek'
+
 import  '../../styles/Home.module.css'
 export default function Nave() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -45,7 +48,8 @@ export default function Nave() {
 
           </section>
           <section className='w-25'>    
-                  <h1>hello</h1>
+          < Range />
+          < Section />
           </section>
         </div>
         
