@@ -9,6 +9,13 @@ export default function Section() {
     <h2 >week 1-4</h2>
     <p style={{color:'#ddd'}} className='border-bottom'>Advanced story telling tecniquues for writers Personas, Charaters & Plots</p>
 
+        
+        <div>
+            <div >
+            <i class="bi bi-book"></i>
+            </div>
+        </div>
+
         </div>
 
     
