@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 export default function Section() {
   return (
