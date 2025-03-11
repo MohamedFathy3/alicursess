@@ -1,15 +1,15 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../header'
-import Videos from '../DesktopView/components/videos'
-import IconComponent from '../DesktopView/components/swiper'
-import CourseDetails from '../DesktopView/components/CourseDetails'
-import CommentsSection from '../DesktopView/components/CommentsSection'
-import Range from '../DesktopView/components/reang'
-import Section from '../DesktopView/components/sectionweek'
+import Header from './header'
+import Videos from './videos'
+import IconComponent from './swiper'
+import CourseDetails from './CourseDetails'
+import CommentsSection from './CommentsSection'
+import Range from './reang'
+import Section from './sectionweek'
 
-import  '../../styles/Home.module.css'
+import  '../styles/Home.module.css'
 export default function Nave() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -35,7 +35,21 @@ export default function Nave() {
   return (
     <section >
       <Header />
+      {windowWidth <= 750 && (
+   <>
+   < Videos />
+           < IconComponent />
+           
+           
+           < CourseDetails />
+           < Range />
+
+           < Section />
+           
+           < CommentsSection />
+   </>
       
+    )}
       {windowWidth >= 750 && (
         <div className='content d-flex py-3 px-5'>
           <section className='w-75 '>       
